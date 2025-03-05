@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+    {% endblock %}
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav_div">
+            <div class="logo">
+                <img width="150px" height="50px" src="{{ url_for('static', filename='images/logo.svg') }}">
+            </div>
+            <ul class="sidenav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('chat') }}">Chat</a></li>
+            </ul>
+        </div>
+    </nav>
+<main>    
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2025 by Michael Ugwe '25 and Arden Cole '25</a>.
+        {% endblock %}
+      </div>
+</main>
+
+{% block scripts %}
+    
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} Chat {% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/chat.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- <h1>Rehearsal</h1> -->
+    <div class="chat-container-example chat-container1">
+        <div class="chat-box chat-box-example">
+            <div class="message bot1"><strong>Rehearsal is an interactive chatbot designed to simulate realistic customer service conflicts and help users master conflict resolution skills. By roleplaying challenging scenarios, it teaches effective negotiation techniques using proven strategies that focus on interests, rights, and power. Trainees engage with lifelike dialogues that evolve based on their approach, learning to de-escalate tensions and foster cooperative solutions. The platform offers a safe space to practice and refine responses, enhancing communication and problem-solving abilities. Rehearsal’s immersive simulations empower users to build confidence and improve their ability to manage real-world disputes effectively. It is the ultimate training tool for modern customer service professionals.</strong></div>
+        </div>
+    </div>
+    <div class="chat-container-example  chat-container">
+        <div class="chat-box chat-box-example">
+            <div class="message user">Hey. How can I help you?</div>
+            <div class="message bot">Let me think...</div>
+            <div class="message bot">From: Eleanor<br>
+                Cooperativeness: 1<br>
+                Strategy: Power<br>
+                Message: Just give me my money back now or I'm going to cause a scene.</div>
+                <div class="message user">Just a moment. Is anything the matter with the blender you have here? If so would you be open to wait as i take a look at it?</div>
+                <div class="message bot">From: Eleanor<br>
+                    Cooperativeness: 1<br>
+                    Strategy: Rights<br>
+                    Message: It's unfair to make me wait when the product is defective. I shouldn't have to deal with this inconvenience.</div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/chat.js') }}" defer></script>
+{% endblock %}
